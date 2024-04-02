@@ -21,7 +21,7 @@ class HomeActivity : AppCompatActivity(){
         //val bundle = intent.extras
         //val username = bundle?.getString("username")
         //setup(username?: "Yipi")
-
+        //soy linaaaa
 
 
     }
