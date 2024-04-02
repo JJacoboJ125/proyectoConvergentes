@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Lego</string>
+    <string-array name="tipoUsuario">
+        <item>dueño de carga</item>
+        <item>dueño de vehiculo</item>
+        <item>conductor del vehiculo</item>
+    </string-array>
 </resources>

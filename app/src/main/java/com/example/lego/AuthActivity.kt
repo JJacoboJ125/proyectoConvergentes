@@ -28,28 +28,12 @@ class AuthActivity : AppCompatActivity() {
         password = findViewById(R.id.password)
         login_btn = findViewById(R.id.login_btn)
         reallogin_btn = findViewById(R.id.reallogin_btn)
-
-
-        //setup
         setup()
     }
    private fun setup() {
        title  = "Authentication"
        reallogin_btn.setOnClickListener {
-           if(username.text.isNotEmpty() && password.text.isNotEmpty()) {
-               val usernameIn = username.text.toString()
-               val passwordIn = password.text.toString()
-               FirebaseAuth.getInstance().createUserWithEmailAndPassword(usernameIn, passwordIn).addOnCompleteListener{
-                   if(it.isSuccessful){
-                        //showHome(it.result?.user?.email ?: "Nobrother")
-                       showHome()
-
-                   } else {
-                        showAlertCreate()
-                   }
-               }
-               Log.i("Credenciales revisadas", "Username : $usernameIn and Password: $passwordIn")
-           }
+           RegisterUs()
        }
        login_btn.setOnClickListener {
            if(username.text.isNotEmpty() && password.text.isNotEmpty()) {
@@ -77,14 +61,7 @@ class AuthActivity : AppCompatActivity() {
         dialog.show()
     }
 
-    private fun showAlertCreate() {
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle("Error")
-        builder.setMessage("Se produjo un error al crear la cuenta")
-        builder.setPositiveButton("Aceptar",null)
-        val dialog: AlertDialog = builder.create()
-        dialog.show()
-    }
+
     private fun showHome(){
        // val homeIntent = Intent(this, HomeActivity::class.java).apply {
             //putExtra("usuario",usuario)
@@ -93,6 +70,15 @@ class AuthActivity : AppCompatActivity() {
         val homeIntent = Intent(this, HomeActivity::class.java)
         startActivity(homeIntent)
 
+    }
+
+    private fun RegisterUs(){
+        // val homeIntent = Intent(this, HomeActivity::class.java).apply {
+        //putExtra("usuario",usuario)
+        //}
+
+        val RegisterIntent = Intent(this, RegisterActivity::class.java)
+        startActivity(RegisterIntent)
     }
 
 }
