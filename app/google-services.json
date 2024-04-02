@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "59530983567",
+    "project_id": "lego-ffd2c",
+    "storage_bucket": "lego-ffd2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59530983567:android:78ca56094c2e878c2618fa",
+        "android_client_info": {
+          "package_name": "com.example.lego"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCa5NYF8sEIUEyeKJqfr0V-_D3cLwv3mDY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
