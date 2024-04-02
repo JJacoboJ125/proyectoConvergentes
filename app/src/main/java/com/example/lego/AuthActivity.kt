@@ -43,6 +43,7 @@ class AuthActivity : AppCompatActivity() {
                    if(it.isSuccessful){
                         //showHome(it.result?.user?.email ?: "Nobrother")
                        showHome()
+
                    } else {
                         showAlertCreate()
                    }

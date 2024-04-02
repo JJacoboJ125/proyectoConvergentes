@@ -7,33 +7,32 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity(){
-   // lateinit var usernameIN: EditText
+    // lateinit var usernameIN: EditText
     // lateinit var cerrar_btn:Button
-
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+    private lateinit var floatingActionButton: FloatingActionButton
+    override fun onCreate(savedInstanceState: Bundle?) {
 
         //usernameIN = findViewById(R.id.usernameIN)
-        super.onCreate(savedInstanceState, persistentState)
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
         //val bundle = intent.extras
         //val username = bundle?.getString("username")
         //setup(username?: "Yipi")
-        //soy jacobo
+
+        floatingActionButton = findViewById(R.id.floatingActionButton)
+
+        floatingActionButton.setOnClickListener {
+            val FormIntent = Intent(this, FormularioOrigen::class.java)
+            startActivity(FormIntent)
+        }
+
 
 
     }
-
-    private fun iniciarForm(){
-        val FormIntent = Intent(this, FormularioOrigen::class.java)
-        startActivity(FormIntent)
-
-    }
-
-
-
 
   //  private fun setup(username:String){
     //      title = "Inicio"
