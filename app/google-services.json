@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "59530983567",
-    "project_id": "lego-ffd2c",
-    "storage_bucket": "lego-ffd2c.appspot.com"
+    "project_number": "370993154897",
+    "project_id": "convergentesapptrans",
+    "storage_bucket": "convergentesapptrans.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:59530983567:android:78ca56094c2e878c2618fa",
+        "mobilesdk_app_id": "1:370993154897:android:e86737a92dfbdf4a172170",
         "android_client_info": {
           "package_name": "com.example.lego"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCa5NYF8sEIUEyeKJqfr0V-_D3cLwv3mDY"
+          "current_key": "AIzaSyB-RlVE6JcrxjGXWCF3ydnlehAhyqsv0oo"
         }
       ],
       "services": {

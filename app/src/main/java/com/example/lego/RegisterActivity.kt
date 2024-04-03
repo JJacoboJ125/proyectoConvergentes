@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.Firebase
@@ -14,7 +15,7 @@ import com.google.firebase.auth.auth
 class RegisterActivity : AppCompatActivity() {
     lateinit var username: EditText
     lateinit var password: EditText
-    lateinit var login_btn: Button
+    lateinit var tipoUs: Spinner
     lateinit var reallogin_btn: Button
     private lateinit var auth: FirebaseAuth
 
@@ -26,15 +27,17 @@ class RegisterActivity : AppCompatActivity() {
         username = findViewById(R.id.username)
         password = findViewById(R.id.password)
         reallogin_btn = findViewById(R.id.reallogin_btn)
+        tipoUs = findViewById(R.id.tipoUsuario)
         setup()
     }
 
     private fun setup() {
-        title = "Authentication"
+        title = "Register"
         reallogin_btn.setOnClickListener {
             if(username.text.isNotEmpty() && password.text.isNotEmpty()) {
                 val usernameIn = username.text.toString()
                 val passwordIn = password.text.toString()
+                val TipoUs = tipoUs.id
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(usernameIn, passwordIn).addOnCompleteListener{
                     if(it.isSuccessful){
                         //showHome(it.result?.user?.email ?: "Nobrother")
@@ -58,7 +61,7 @@ class RegisterActivity : AppCompatActivity() {
         dialog.show()
     }
     private fun showHome(){
-        // val homeIntent = Intent(this, HomeActivity::class.java).apply {
+        //val homeIntent = Intent(this, HomeActivity::class.java).apply {
         //putExtra("usuario",usuario)
         //}
 
