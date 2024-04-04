@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.database
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var username: EditText
@@ -18,6 +20,7 @@ class RegisterActivity : AppCompatActivity() {
     lateinit var tipoUs: Spinner
     lateinit var reallogin_btn: Button
     private lateinit var auth: FirebaseAuth
+    private lateinit var database: FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +31,7 @@ class RegisterActivity : AppCompatActivity() {
         password = findViewById(R.id.password)
         reallogin_btn = findViewById(R.id.reallogin_btn)
         tipoUs = findViewById(R.id.tipoUsuario)
+        database=Firebase.database
         setup()
     }
 
@@ -42,6 +46,16 @@ class RegisterActivity : AppCompatActivity() {
                     if(it.isSuccessful){
                         //showHome(it.result?.user?.email ?: "Nobrother")
                         showHome()
+                        val idUsuario= FirebaseAuth.getInstance().currentUser?.uid
+                        val RefDB = FirebaseDatabase.getInstance().getReference("usuarios")
+
+                        if (idUsuario != null) {
+                            RefDB.child(idUsuario).setValue(tipoUs.selectedItemId.toString())
+                        }
+
+
+
+
 
                     } else {
                         showAlertCreate()
