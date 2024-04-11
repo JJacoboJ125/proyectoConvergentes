@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Lego"
         tools:targetApi="31" >
         <activity
-            android:name=".HomeDVActivity"
+            android:name=".HomeDCActivity"
             android:exported="false"
             android:label="@string/title_activity_home_dvactivity"
             android:theme="@style/Theme.Lego.NoActionBar" />
@@ -24,7 +24,7 @@
             android:name=".FormularioDestino"
             android:exported="false" />
         <activity
-            android:name=".FormularioOrigen"
+            android:name=".FormularioMain"
             android:exported="false" />
         <activity
             android:name=".IniciarPublicacion"

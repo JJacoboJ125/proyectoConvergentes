@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/all_background"
-    tools:context=".FormularioDestino">
+    tools:context=".FormularioMain">
 
 
 
@@ -99,7 +99,7 @@
         android:layout_width="171dp"
         android:layout_height="91dp"
         android:layout_marginTop="76dp"
-        android:onClick="seguirAdatos"
+        android:onClick="seguiaACarga"
 
         android:text="siguiente"
         app:layout_constraintEnd_toEndOf="parent"

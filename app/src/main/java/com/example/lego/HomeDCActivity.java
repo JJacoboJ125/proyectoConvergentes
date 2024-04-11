@@ -1,5 +1,6 @@
 package com.example.lego;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -13,7 +14,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.lego.databinding.ActivityHomeDvactivityBinding;
 
-public class HomeDVActivity extends AppCompatActivity {
+public class HomeDCActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 private ActivityHomeDvactivityBinding binding;
@@ -29,8 +30,8 @@ private ActivityHomeDvactivityBinding binding;
         binding.appBarHomeDvactivity.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "barra de control", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(HomeDCActivity.this,FormularioMain.class);
+                startActivity(intent);
             }
         });
         DrawerLayout drawer = binding.drawerLayout;

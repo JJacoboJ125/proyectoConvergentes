@@ -91,11 +91,11 @@ class AuthActivity : AppCompatActivity() {
        // val homeIntent = Intent(this, HomeActivity::class.java).apply {
             //putExtra("usuario",usuario)
         //}
-        if(TipoUsuario == 1){
-            val homeIntent = Intent(this, HomeDVActivity::class.java)
+        if(TipoUsuario == 0){
+            val homeIntent = Intent(this, HomeDCActivity::class.java)
             startActivity(homeIntent)
         }else
-            if(TipoUsuario == 0){
+            if(TipoUsuario == 1){
                 val homeIntent = Intent(this, HomeActivity::class.java)
                 startActivity(homeIntent)
             }

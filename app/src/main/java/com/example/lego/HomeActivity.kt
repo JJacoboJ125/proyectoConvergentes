@@ -2,13 +2,8 @@ package com.example.lego
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
-import android.util.Log
-import android.widget.Button
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.firebase.auth.FirebaseAuth
 
 class HomeActivity : AppCompatActivity(){
     // lateinit var usernameIN: EditText
@@ -26,7 +21,7 @@ class HomeActivity : AppCompatActivity(){
         floatingActionButton = findViewById(R.id.floatingActionButton)
 
         floatingActionButton.setOnClickListener {
-            val FormIntent = Intent(this, FormularioOrigen::class.java)
+            val FormIntent = Intent(this, FormularioMain::class.java)
             startActivity(FormIntent)
         }
 
