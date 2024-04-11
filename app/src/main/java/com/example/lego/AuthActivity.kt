@@ -10,6 +10,11 @@ import androidx.appcompat.app.AlertDialog
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
 import com.google.firebase.Firebase
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.database
 
 
 class AuthActivity : AppCompatActivity() {
@@ -18,6 +23,7 @@ class AuthActivity : AppCompatActivity() {
     lateinit var login_btn:Button
     lateinit var reallogin_btn:Button
     private lateinit var auth: FirebaseAuth
+    private lateinit var database: FirebaseDatabase
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +34,7 @@ class AuthActivity : AppCompatActivity() {
         password = findViewById(R.id.password)
         login_btn = findViewById(R.id.login_btn)
         reallogin_btn = findViewById(R.id.reallogin_btn)
+        database=Firebase.database
         setup()
     }
    private fun setup() {
@@ -42,7 +49,25 @@ class AuthActivity : AppCompatActivity() {
                FirebaseAuth.getInstance().signInWithEmailAndPassword(usernameIn, passwordIn).addOnCompleteListener{
                    if(it.isSuccessful){
                        //showHome(it.result?.user?.email ?: "Nobrother")
-                       showHome()
+                           var TipoUs:Int=3
+                           var uid=FirebaseAuth.getInstance().currentUser?.uid
+                            val db = FirebaseDatabase.getInstance().getReference("usuarios")
+                           if (uid != null) {
+                               db.child(uid).addListenerForSingleValueEvent(object :
+                                   ValueEventListener {
+                                   override fun onDataChange(snapshot: DataSnapshot) {
+                                       val tipoUsSnapshot = snapshot.getValue(String::class.java)
+                                       val tipoUs = tipoUsSnapshot?.toIntOrNull() ?: 0
+                                       ?: 3 // Valor por defecto si no se obtiene ningún valor de la base de datos
+                                       showHome(tipoUs)
+                                   }
+
+                                   override fun onCancelled(error: DatabaseError) {
+
+                                   }
+                               })
+                           }
+
                    } else {
                        showAlert()
                    }
@@ -62,13 +87,18 @@ class AuthActivity : AppCompatActivity() {
     }
 
 
-    private fun showHome(){
+    private fun showHome(TipoUsuario:Int){
        // val homeIntent = Intent(this, HomeActivity::class.java).apply {
             //putExtra("usuario",usuario)
         //}
-
-        val homeIntent = Intent(this, HomeActivity::class.java)
-        startActivity(homeIntent)
+        if(TipoUsuario == 1){
+            val homeIntent = Intent(this, HomeDVActivity::class.java)
+            startActivity(homeIntent)
+        }else
+            if(TipoUsuario == 0){
+                val homeIntent = Intent(this, HomeActivity::class.java)
+                startActivity(homeIntent)
+            }
 
     }
 

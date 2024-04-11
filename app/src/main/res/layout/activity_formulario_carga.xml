@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background"
+    android:background="@drawable/all_background"
     tools:context=".FormularioCarga">
 
 
@@ -23,6 +23,21 @@
         app:layout_constraintVertical_bias="0.075" />
 
     <EditText
+        android:id="@+id/titulo"
+        android:layout_width="345dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:hint="inidica el titulo de tu solicitud"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/DatosMercancia"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <EditText
         android:id="@+id/tipoMercancia"
         android:layout_width="345dp"
         android:layout_height="59dp"
@@ -34,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/DatosMercancia"
+        app:layout_constraintTop_toBottomOf="@id/titulo"
         app:layout_constraintVertical_bias="0.051" />
 
     <TextView

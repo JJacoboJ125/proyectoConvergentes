@@ -45,17 +45,13 @@ class RegisterActivity : AppCompatActivity() {
                 FirebaseAuth.getInstance().createUserWithEmailAndPassword(usernameIn, passwordIn).addOnCompleteListener{
                     if(it.isSuccessful){
                         //showHome(it.result?.user?.email ?: "Nobrother")
-                        showHome()
                         val idUsuario= FirebaseAuth.getInstance().currentUser?.uid
                         val RefDB = FirebaseDatabase.getInstance().getReference("usuarios")
 
                         if (idUsuario != null) {
                             RefDB.child(idUsuario).setValue(tipoUs.selectedItemId.toString())
                         }
-
-
-
-
+                        showHome()
 
                     } else {
                         showAlertCreate()

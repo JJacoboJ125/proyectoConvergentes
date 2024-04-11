@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login_background"
+    android:background="@drawable/all_background"
     android:gravity="center"
     android:padding="19dp"
     tools:context=".HomeActivity">
@@ -23,23 +23,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="226dp"
-                    android:text="mis publicaciones"
-                    android:textAlignment="center"
-                    android:textSize="60sp"
-                    tools:layout_editor_absoluteX="-4dp"
-                    tools:layout_editor_absoluteY="16dp" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="194dp"
-                    android:text="proxiamente con db"
-                    android:textAlignment="center"
-                    android:textSize="24sp" />
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
                 <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:id="@+id/floatingActionButton"
