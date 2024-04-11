@@ -74,6 +74,19 @@
                 android:textColorHint="@color/white"
                 android:textSize="20sp" />
 
+            <EditText
+                android:id="@+id/ConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/round_corner"
+                android:hint="Confirm password"
+                android:inputType="textPassword"
+                android:padding="16dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="20sp" />
+
             <TextView
                 android:id="@+id/brands"
                 android:layout_width="wrap_content"
@@ -95,18 +108,11 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
 
-            <EditText
-                android:id="@+id/Direccion"
+
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/mapView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/round_corner"
-                android:hint="Direccion"
-                android:inputType="text"
-                android:padding="18dp"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="20sp" />
+                android:layout_height="wrap_content" />
 
             <EditText
                 android:id="@+id/fechaNaci"
@@ -119,7 +125,15 @@
                 android:padding="18dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                />
+
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                />
 
 
             <Button
