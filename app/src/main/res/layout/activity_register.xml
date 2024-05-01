@@ -11,7 +11,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,6 +23,7 @@
                 android:layout_width="168dp"
                 android:layout_height="168dp"
                 android:src="@drawable/icon_account_circle" />
+
             <EditText
                 android:id="@+id/nombre"
                 android:layout_width="match_parent"
@@ -35,6 +36,7 @@
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
                 android:textSize="20sp" />
+
             <EditText
                 android:id="@+id/apellido"
                 android:layout_width="match_parent"
@@ -125,15 +127,41 @@
                 android:padding="18dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
 
             <RadioGroup
+                android:id="@+id/radioGenero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/round_corner"
+                android:inputType="text"
+                android:padding="18dp"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:text="Genero" >
 
-                />
+                <RadioButton
+                    android:id="@+id/radioH"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hombre" />
+
+                <RadioButton
+                    android:id="@+id/radioM"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mujer" />
+
+                <RadioButton
+                    android:id="@+id/radioB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="no binario" />
+
+
+            </RadioGroup>
 
 
             <Button
@@ -146,6 +174,10 @@
                 android:text="registrate"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
 
         </LinearLayout>

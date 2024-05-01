@@ -11,4 +11,5 @@ import com.google.firebase.Firebase
 
 class EmailPasswordActivity: Activity() {
     private lateinit var auth: FirebaseAuth
+
 }
